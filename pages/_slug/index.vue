@@ -6,6 +6,7 @@
     <p class="textarea" v-html="textarea"></p>
     <p class="text" v-html="text"></p>
     <div class="boolean" v-html="boolean"></div>
+    <p class="category">{{ category && category.name }}</p>
   </main>
 </template>
 
