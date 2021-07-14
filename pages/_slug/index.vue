@@ -1,10 +1,15 @@
 <template>
   <main class="main">
     <h1 class="title">{{ title }}</h1>
-    <p class="publishedAt">{{ publishedAt }}</p>
+    <p class="publishedAt">{{ new Date(publishedAt).toLocaleDateString() }}</p>
+    <p>↓ローカルフォルダから読み込んでる画像</p>
+    <img v-bind:src="'/img/'+img" alt="">
+    <p v-html="'/img/'+img"></p>
+
+    <p>↓microCMSから読み込んでる画像</p>
+    <img :src="photo.url" alt="">
+    <p v-html="photo.url"></p>
     <div class="post" v-html="body"></div>
-    <p class="textarea" v-html="textarea"></p>
-    <p class="text" v-html="text"></p>
     <div class="boolean" v-html="boolean"></div>
     <p class="category">{{ category && category.name }}</p>
   </main>
